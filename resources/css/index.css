@@ -1,0 +1,119 @@
+:root {
+  --default-bg: rgba(204,171,133, .75);
+}
+
+body {
+  margin: 0;
+  background: #ccab85;
+  font-family: Garamond;
+  font-weight: 400;
+  overflow: hidden;
+}
+    
+.content {
+  height: 200vh;
+  background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm00ODYtYmctMDE5LXguanBn.jpg');
+  background-color: #ccab85;
+  background-size: cover;
+  padding: 100px;
+  text-align: center;
+}
+
+/* Followed a tutorial for a nav bar*/
+header {
+  background: var(--default-bg);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: -99px;
+  left: -99px;
+}
+
+.menu-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle-label span,
+.menu-toggle-label span::before,
+.menu-toggle-label span::after {
+  display: block;
+  background: #4c3e20;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  left: 0;
+  background: var(--default-bg);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 500ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color:#4c3e20;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 130ms ease-in-out;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+.menu-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.menu-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.content h2{
+  font-family: Garamond;
+  font-weight: bold;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.content p{
+  font-family: Georgia;
+  font-weight: 200;
+  font-size: 20px;
+  background: rgba(204,171,133, .30);
+  background-size: cover;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
